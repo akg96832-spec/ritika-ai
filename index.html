@@ -84,15 +84,17 @@
     <input type="text" id="name" value="Ritika">
     <br><br>
 
-    <button onclick="startMusic()">Start Music 🎵</button>
+    <button onclick="playMusic()">Start Music 🎵</button>
     <button onclick="compliment()">Get Compliment ✨</button>
     <button onclick="showSecret()">Secret 💌</button>
 
     <div id="output"></div>
 
     <div id="hiddenMessage">
-        Ritika, tum meri life ki sabse beautiful notification ho 💕 <br>
-        Aur main hamesha tumhare saath rahunga 💖
+        Ritika, tum meri zindagi ki sabse pyari smile ho 💖<br>
+Tumhari har baat mere din ko special bana deti hai ✨<br>
+Aur main hamesha tumhare saath khada rahunga ❤️
+
     </div>
 </div>
 
@@ -128,6 +130,16 @@ function showSecret() {
     document.getElementById("hiddenMessage").style.display = "block";
 }
 </script>
+<audio id="bgMusic" loop>
+    <source src="music.mp3.mp3" type="audio/mp3">
+</audio>
 
+<script>
+function playMusic() {
+    var music = document.getElementById("bgMusic");
+    music.volume = 0.4; // halka music
+    music.play();
+}
+</script>
 </body>
 </html>
