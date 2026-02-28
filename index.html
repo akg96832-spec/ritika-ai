@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ritika's Special AI 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            width: 220px;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: #ff1e56;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #ff0040;
+        }
+
+        #output {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            min-height: 40px;
+        }
+
+        #hiddenMessage {
+            display: none;
+            margin-top: 25px;
+            font-size: 22px;
+            color: yellow;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+    <h1>Welcome Ritika 💖</h1>
+
+    <input type="text" id="name" value="Ritika">
+    <br><br>
+
+    <button onclick="startMusic()">Start Music 🎵</button>
+    <button onclick="compliment()">Get Compliment ✨</button>
+    <button onclick="showSecret()">Secret 💌</button>
+
+    <div id="output"></div>
+
+    <div id="hiddenMessage">
+        Ritika, tum meri life ki sabse beautiful notification ho 💕 <br>
+        Aur main hamesha tumhare saath rahunga 💖
+    </div>
+</div>
+
+<footer>
+    Made with ❤️ by Abhinit
+</footer>
+
+<script>
+function startMusic() {
+    document.getElementById("bgMusic").play();
+}
+
+function compliment() {
+    var name = document.getElementById("name").value;
+
+    var messages = [
+        name + ", tumhari smile pure universe ko light kar sakti hai ✨",
+        name + ", tum limited edition masterpiece ho 💎",
+        name + ", tumhari vibe WiFi se bhi strong hai 😌",
+        name + ", tum bina filter ke bhi perfect ho 💕",
+        name + ", agar beauty ek subject hota to tum topper hoti 😜"
+    ];
+
+    var random = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("output").innerHTML = random;
+
+    var speech = new SpeechSynthesisUtterance(random);
+    speech.lang = "en-US";
+    window.speechSynthesis.speak(speech);
+}
+
+function showSecret() {
+    document.getElementById("hiddenMessage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
